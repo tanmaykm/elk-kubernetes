@@ -5,6 +5,8 @@ metadata:
   labels:
     component: elasticsearch
     role: client
+    k8s-app: elasticsearch-logging
+    kubernetes.io/cluster-service: "true"
   annotations:
     prometheus.io/scrape: 'true'
     prometheus.io/path: '/_prometheus/metrics'
@@ -14,6 +16,5 @@ spec:
     component: elasticsearch
     role: client
   ports:
-  - name: http
-    port: 9200
+  - port: 9200
     protocol: TCP

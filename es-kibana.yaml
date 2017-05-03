@@ -4,8 +4,10 @@ metadata:
   name: kibana-logging
   labels:
     k8s-app: kibana-logging
+    kubernetes.io/cluster-service: "true"
     kubernetes.io/name: "Kibana"
 spec:
+  # type: LoadBalancer
   ports:
   - port: 5601
     protocol: TCP
